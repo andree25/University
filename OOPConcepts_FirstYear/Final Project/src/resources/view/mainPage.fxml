@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMainPage">
+   <children>
+      <SplitPane dividerPositions="0.34448160535117056" layoutX="320.0" layoutY="200.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="806.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #87CEEB;">
+               <children>
+                  <Text layoutX="81.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO OUR GYMHALL">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="199.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIRST YOU NEED TO CHOOSE:">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Pane layoutX="-8.0" layoutY="-4.0" prefHeight="396.0" prefWidth="282.0" style="-fx-background-color: #4682B4;">
+                     <children>
+                        <Text layoutX="20.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you are a trainer">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="72.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="click here ">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="usernameTr" layoutX="40.0" layoutY="179.0" promptText="Username" />
+                        <PasswordField fx:id="passTr" layoutX="40.0" layoutY="227.0" promptText="Password" />
+                        <Button fx:id="logTrId" layoutX="169.0" layoutY="271.0" mnemonicParsing="false" onAction="#onClickActionLogTrId" text="Login" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="542.0" layoutY="-4.0" prefHeight="396.0" prefWidth="268.0" style="-fx-background-color: #4682B4;">
+                     <children>
+                        <Text layoutX="15.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you are an admin">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="72.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="click here ">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="usernameAdmin" layoutX="40.0" layoutY="179.0" promptText="Username" />
+                        <PasswordField fx:id="passAdmin" layoutX="40.0" layoutY="227.0" promptText="Password" />
+                        <Button fx:id="logAdId" layoutX="169.0" layoutY="271.0" mnemonicParsing="false" onAction="#onClickActionLogAdId" text="Login" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="268.0" layoutY="-4.0" prefHeight="396.0" prefWidth="274.0" style="-fx-background-color: #87CEEB;">
+                     <children>
+                        <Text layoutX="5.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you are a customer">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="73.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="click here ">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="usernameCust" layoutX="40.0" layoutY="179.0" promptText="Username" />
+                        <PasswordField fx:id="passCust" layoutX="41.0" layoutY="227.0" promptText="Password" />
+                        <Button fx:id="logCustId" layoutX="169.0" layoutY="271.0" mnemonicParsing="false" onAction="#onClickActionLogCustId" text="Login" />
+                        <Button fx:id="signCustId" layoutX="169.0" layoutY="329.0" mnemonicParsing="false" onAction="#onClickActionSignCustId" text="SignUp" />
+                        <Text layoutX="5.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you don't have an account click on SignUp: " wrappingWidth="172.7509765625" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

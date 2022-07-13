@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerMainCustPage">
+   <children>
+      <TabPane layoutX="161.0" layoutY="82.0" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab fx:id="feedbackID1" text="Add a new schedule">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.41353383458646614" layoutX="300.0" layoutY="170.0" prefHeight="569.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="568.0" prefWidth="277.0">
+                                 <children>
+                                    <TableView fx:id="scheduleTable" layoutX="30.0" layoutY="60.0" prefHeight="568.0" prefWidth="283.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_scheduleId" prefWidth="41.59997636079788" style="-fx-background-color: #4682B4;" text="schId" />
+                                          <TableColumn fx:id="col_customer" prefWidth="75.20000839233398" style="-fx-background-color: #4682B4;" text="customer" />
+                                          <TableColumn fx:id="col_date" prefWidth="63.199981689453125" style="-fx-background-color: #87CEEB;" text="date" />
+                                          <TableColumn fx:id="col_time" prefWidth="65.60003662109375" style="-fx-background-color: #87CEEB;" text="time" />
+                                          <TableColumn fx:id="col_hall" prefWidth="85.59999084472656" style="-fx-background-color: #87CEEB;" text="hall" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #87CEEB;">
+                                 <children>
+                                    <TextField fx:id="nameID" layoutX="42.0" layoutY="179.0" prefHeight="34.0" prefWidth="204.0" promptText="Write your name" style="-fx-background-color: #F0FFFF;" />
+                                    <Text layoutX="20.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make a new appointment" wrappingWidth="425.114013671875">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="20.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the date:">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <DatePicker fx:id="dateID" layoutX="213.0" layoutY="258.0" prefHeight="25.0" prefWidth="222.0" style="-fx-background-color: #F0FFFF;" />
+                                    <Text layoutX="19.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the time:">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Button fx:id="submitID" layoutX="317.0" layoutY="437.0" mnemonicParsing="false" onAction="#onClickActionSubmitId" prefHeight="38.0" prefWidth="117.0" text="SUBMIT" />
+                                    <Text layoutX="18.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the hall:" wrappingWidth="181.3359375">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <ChoiceBox fx:id="choiceBoxHall" layoutX="213.0" layoutY="365.0" prefHeight="33.0" prefWidth="229.0" />
+                                    <TextField fx:id="timeID" layoutX="213.0" layoutY="314.0" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #F0FFFF;" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Trainers">
+               <content>
+                  <TableView fx:id="feedbackTable" prefHeight="569.6" prefWidth="800.0">
+                     <columns>
+                        <TableColumn fx:id="col_id" prefWidth="52.800018310546875" style="-fx-background-color: #87CEEB;" text="id" />
+                        <TableColumn fx:id="col_client" prefWidth="117.60000610351562" style="-fx-background-color: #4682B4;" text="client" />
+                        <TableColumn fx:id="col_trainer" prefWidth="140.79998779296875" style="-fx-background-color: #87CEEB;" text="trainer" />
+                        <TableColumn fx:id="col_stars" prefWidth="151.20001220703125" style="-fx-background-color: #4682B4;" text="stars" />
+                        <TableColumn fx:id="col_feedback" prefWidth="338.40008544921875" style="-fx-background-color: #87CEEB;" text="feedback" />
+                     </columns>
+                  </TableView>
+               </content>
+          </Tab>
+          <Tab text="GIVE A FEEDBACK">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #87CEFA;">
+                     <children>
+                        <Button fx:id="sendId" layoutX="582.0" layoutY="375.0" mnemonicParsing="false" onAction="#onClickActionSendId" prefHeight="59.0" prefWidth="157.0" text="Send feedback" />
+                        <Rating fx:id="ratingID" layoutX="499.0" layoutY="270.0" prefHeight="32.0" prefWidth="224.0" />
+                        <Label fx:id="ratLabelID" layoutX="686.0" layoutY="278.0" prefHeight="18.0" prefWidth="86.0" />
+                        <TextArea fx:id="feedbackID" layoutX="30.0" layoutY="52.0" prefHeight="386.0" prefWidth="406.0" promptText="Write your feedback" />
+                        <TextField fx:id="customerName" layoutX="495.0" layoutY="127.0" prefHeight="38.0" prefWidth="236.0" promptText="Your name" />
+                        <TextField fx:id="trainerName" layoutX="495.0" layoutY="190.0" prefHeight="38.0" prefWidth="236.0" promptText="Trainer's name" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="See the diets">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="dietTable" layoutX="220.0" layoutY="130.0" prefHeight="569.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="col_dietID" prefWidth="75.0" style="-fx-background-color: #87CEEB;" text="dietID" />
+                            <TableColumn fx:id="col_name" prefWidth="121.5999755859375" style="-fx-background-color: #87CEEB;" text="name" />
+                              <TableColumn fx:id="col_kilo" prefWidth="165.60003662109375" style="-fx-background-color: #87CEEB;" text="kiloKal/day" />
+                              <TableColumn fx:id="col_mealTime" prefWidth="210.4000244140625" style="-fx-background-color: #4682B4;" text="mealTime" />
+                              <TableColumn fx:id="col_custDiet" prefWidth="229.5999755859375" style="-fx-background-color: #87CEEB;" text="customer" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
