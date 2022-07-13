@@ -1,0 +1,40 @@
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+stack<int> sortare(stack<int> &input) {
+    stack<int> stack2;
+
+    while (!input.empty()) {
+        int tmp = input.top();
+        input.pop();
+
+        while (!stack2.empty() && stack2.top() > tmp) {
+            input.push(stack2.top());
+            stack2.pop();
+        }
+        stack2.push(tmp);
+    }
+    return stack2;
+}
+
+// main function
+int main() {
+    stack<int> input;
+    input.push(18);
+    input.push(7);
+    input.push(54);
+    input.push(92);
+    input.push(10);
+    input.push(18);
+
+    // This is the temporary stack
+    stack<int> stack2 = sortare(input);
+    cout << "Stiva sortata este::\n";
+
+    while (!stack2.empty()) {
+        cout << stack2.top() << " ";
+        stack2.pop();
+    }
+}

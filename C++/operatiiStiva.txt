@@ -1,0 +1,52 @@
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define MAX 1000
+
+class Stiva {
+    int top;
+
+public:
+    int a[MAX];
+
+    Stiva() { top = -1; }
+
+    bool push(int x);
+
+    int pop();
+
+};
+
+bool Stiva::push(int x) {
+    if (top >= (MAX - 1)) {
+        cout << "Stack Overflow";
+        return false;
+    } else {
+        a[++top] = x;
+        cout << x << " Introdus in stiva\n";
+        return true;
+    }
+}
+
+int Stiva::pop() {
+    if (top < 0) {
+        cout << "Stack Underflow";
+        return 0;
+    } else {
+        int x = a[top--];
+        return x;
+    }
+}
+
+
+int main() {
+    class Stiva s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout << s.pop() << "Iesit din stiva\n";
+
+    return 0;
+}

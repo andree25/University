@@ -1,0 +1,99 @@
+#include<iostream>
+
+using namespace std;
+
+int top = -1, n = 100, stack[100];
+
+
+void push(int val) {
+    if (top > n) {
+        cout << "Invalid";
+        cout << endl;
+    } else {
+        top++;
+        stack[top] = val;
+    }
+}
+
+void pop() {
+    if (top <= -1) {
+        cout << "Invalid";
+        cout << endl;
+    } else {
+        for (int i = 0; i <= top; i++) {
+            stack[i] = stack[i + 1];
+        }
+        top--;
+
+        for (int i = 0; i <= top; i++) {
+            cout << stack[i] << " ";
+            cout << endl;
+        }
+    }
+}
+
+void isempty() {
+    if (top < 0) {
+        cout << "Null Queue";
+        cout << endl;
+    } else
+        for (int i = 0; i <= top; i++)
+            cout << stack[i] << " ";
+}
+
+
+void display() {
+
+    if (top >= 0) {
+        cout << "Queue elements: ";
+        for (int i = 0; i <= top; i++)
+            cout << " " << stack[i] << " ";
+        cout << endl;
+    } else
+        cout << " Null Queue";
+
+}
+
+int main() {
+    int nr, val;
+    do {
+        cout << "Your choice is:";
+        cin >> nr;
+
+        switch (nr) {
+            case 1: {
+                cout << "Value:" << endl;
+                cin >> val;
+                push(val);
+                break;
+            }
+
+
+            case 2: {
+                pop();
+                break;
+            }
+
+            case 3: {
+                display();
+                break;
+            }
+
+
+            case 4: {
+                isempty();
+                break;
+            }
+
+            case 5: {
+                cout << "Exit" << endl;
+
+                default: {
+                    cout << "Invalid Choice";
+                    cout << endl;
+                }
+            }
+        }
+    } while (nr != 5);
+    return 0;
+}

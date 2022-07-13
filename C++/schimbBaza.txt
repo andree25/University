@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void Read(string& nr, int& base)
+{
+	cout << "Baza:";
+	cin >> base;
+	cout << endl;
+	cout << "Numar " << base << " :";
+	cin >> nr;
+	cout << endl;
+}
+int val(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (int)c - '0';
+	else
+		return (int)c - 'A' + 10;
+}
+int Convert(string nr, int base)
+{
+	int number_10=0, power=1;
+	for (int index = nr.size(); index > 0; index--)
+	{
+		if (val(nr.back()) >= base)
+		{
+			cout<<"Invalid"<<endl;
+			return -1;
+		}
+
+		number_10 += val(nr.back()) * power;
+		power = power * base;
+		nr.pop_back();
+	}
+	cout << number_10;
+	return number_10;
+}
+int main()
+{
+	int base;
+	string nr;
+	Read(nr, base);
+	Convert(nr, base);
+	return 0;
+}

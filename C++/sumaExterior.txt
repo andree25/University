@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int n, a[101][101], s = 0;
+
+int main() {
+
+    cin >> n;
+    for (int i = 1; i <= n; ++i)
+        for (int j = 1; j <= n; ++j)
+            cin >> a[i][j];
+
+    for (int i = 1; i <= n / 2; i++) {
+        for (int j = i; j <= n - i; ++j) {            //sus
+            cout << a[i][j] << " ";
+            s += a[i][j];
+        }
+        for (int j = i; j <= n - i; ++j) {           //dreapta
+            cout << a[j][n - i + 1] << " ";
+            s += a[j][n - i + 1];
+        }
+        for (int j = n - i + 1; j >= i + 1; --j) {   //jos
+            cout << a[n - i + 1][j] << " ";
+            s += a[n - i + 1][j];
+        }
+        for (int j = n - i + 1; j >= i + 1; --j) {     //stanga
+            cout << a[j][i] << " ";
+            s += a[j][i];
+        }
+    }
+
+    if (n % 2 == 1) {									//pt n impar
+        cout << a[n / 2 + 1][n / 2 + 1] << " ";
+        s += a[n / 2 + 1][n / 2 + 1];
+        cout << "suma este: " << s;
+    }
+    return 0;
+}

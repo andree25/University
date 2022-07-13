@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstring>
+#include<cmath>
+using namespace std;
+
+int rec(int i, char s[], int b )
+{
+    int c;
+    if(i==strlen(s))
+        return 0;
+
+    if(isdigit(s[i]))
+        c=s[i]-'0';
+    else
+        c=10+s[i]-'A';
+
+    return c*pow(b,strlen(s)-i-1) +  rec(i+1,s,b);
+
+}
+
+int main()
+{
+    char s[100];
+    int b;
+    cin>>s;
+    cin>>b;
+    cout<<rec(0,s,b);
+
+
+}
